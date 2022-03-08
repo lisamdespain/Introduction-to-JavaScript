@@ -19,7 +19,10 @@ Do the following:
 
    HINT: no function required
 */
-
+const votingAge = 19;
+if (votingAge >= 18){
+  console.log(true);
+}
 
 
 /*
@@ -33,7 +36,13 @@ Do the following:
 
    HINT: no function required
 */
-
+const firstThing = 1;
+const secondThing = 2;
+if (firstThing === secondThing) {
+  console.log(firstThing);
+} else{
+  console.log('They are not the same');
+}
 
 
 
@@ -48,8 +57,9 @@ Do the following:
 
    HINT: look up the Number method
 */
-
-
+const year = '1999';
+Number(year);
+console.log(year);
 
 
 /*
@@ -61,10 +71,10 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-  /*add your code here*/
+function multiply(a,b){
+  return a * b;
 }
-
+multiply(3,4);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -77,10 +87,11 @@ Do the following:
  3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-  /*add your code here*/
+function dogYears(age){
+  return age * 7;
+ 
 }
-
+console.log(dogYears(6));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -129,11 +140,37 @@ NOTE 2: This is a great time to check the tests to see what it expects, versus w
         So, on this one test, the weight would be 4 pounds, and the age would be 1 years old. It's expecting your function to return a decimal number of 0.2
 */  
 
-function hungryDog(/*add your code here*/){
-  /*add your code here*/
+function hungryDog(weight,age){
+  if (age >= 1) {
+    if (weight < 5){
+      return weight * .05;
+    } else if (weight <= 10){
+      return weight * .04;
+    } else if (weight <= 15){
+      return weight * .03;
+    } else {
+      return weight * .02;
+    }
+  } else {
+    if (age <= .25){
+      return weight * .1;
+    } else if (age <= 7/12) {
+      return weight * .05;
+    } else {
+      return weight * .04;
+    }
+  }
 }
+console.log(hungryDog(4,.25));
+// up to 5 lbs - 5% of their body weight
+//    6 - 10 lbs - 4% of their body weight 
+//    11 - 15 lbs - 3% of their body weight 
+//    > 15lbs - 2% of their body weight 
 
 
+// 2 - 4 months 10% of their body weight
+//    4 - 7 months 5% of their body weight 
+//    7 - 12 months 4% of their body weight
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -155,11 +192,29 @@ Use the game function below to do the following:
 
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 */
+let computerChoice = Math.floor(Math.random() * 3);
+let compPick = 'rock';
+  if (computerChoice === 0) {
+   compPick = 'rock';
+} else if (computerChoice === 1){
+  compPick = 'paper';
+ } else if (computerChoice === 2){
+    compPick = 'scissors';
+  }
 
-function game(user, computer){
-  /*add your code here*/
-}
-
+function playGame(userChoice) {
+   if (userChoice === compPick){
+      return 'it\'s a tie';
+   } else if ((userChoice === 'scissors' && compPick === 'paper') || (userChoice === 'paper' && compPick === 'rock') || (userChoice === 'rock' && compPick === 'scissors')) {
+     return 'you win!';
+  }
+   
+   else {
+      return 'you lose!';
+  }
+ }
+console.log(compPick);
+console.log(playGame('rock'));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -173,10 +228,10 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-  /*add your code here*/
+function miles(kilometers){
+  return kilometers / 1.609;
 }
-
+console.log(miles(12));
 
 
 //Task 5b - Feet to CM
@@ -187,10 +242,10 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-  /*add your code here*/
+function feet(cm){
+  return cm / 30.48;
 }
-
+feet(24);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -207,10 +262,13 @@ Using the annoyingSong function below do the following:
 4. Each time the annoyingSong is run from this loop, it should console.log the string that was returned. 
 */
 
-function annoyingSong(/*add your code here*/){
-      /*add your code here*/
+function annoyingSong(num){
+    return `${num} bottles of soda on the wall, ${num} bottles of soda, take one down pass it around ` + (num -1) + ` bottles of soda on the wall`;
 }
-
+for (i = 0; i < num; i++){
+    return annoyingSong();
+}
+console.log(annoyingSong(5));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
