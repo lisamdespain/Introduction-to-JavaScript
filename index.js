@@ -45,8 +45,6 @@ if (firstThing === secondThing) {
 }
 
 
-
-
 /*
 Task 1c - Convert Strings to Numbers (not auto tested)
 
@@ -192,29 +190,27 @@ Use the game function below to do the following:
 
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 */
-let computerChoice = Math.floor(Math.random() * 3);
-let compPick = 'rock';
-  if (computerChoice === 0) {
-   compPick = 'rock';
-} else if (computerChoice === 1){
-  compPick = 'paper';
- } else if (computerChoice === 2){
-    compPick = 'scissors';
+let computersChoice = Math.floor(Math.random() * 3);
+
+  if (computersChoice === 0) {
+    computersChoice = 'rock';
+} else if (computersChoice === 1){
+  computersChoice = 'paper';
+ } else if (computersChoice === 2){
+  computersChoice = 'scissors';
   }
 
-function playGame(userChoice) {
-   if (userChoice === compPick){
+function game(usersChoice) {
+   if (usersChoice === computersChoice){
       return 'it\'s a tie';
-   } else if ((userChoice === 'scissors' && compPick === 'paper') || (userChoice === 'paper' && compPick === 'rock') || (userChoice === 'rock' && compPick === 'scissors')) {
+   } else if ((usersChoice === 'scissors' && computersChoice === 'paper') || (usersChoice === 'paper' && computersChoice === 'rock') || (usersChoice === 'rock' && computersChoice === 'scissors')) {
      return 'you win!';
-  }
-   
-   else {
+  } else {
       return 'you lose!';
   }
  }
-console.log(compPick);
-console.log(playGame('rock'));
+console.log(computersChoice);
+console.log(game('rock'));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -228,10 +224,10 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(kilometers){
-  return kilometers / 1.609;
+function miles(km){
+  return km * .621371;
 }
-console.log(miles(12));
+console.log(miles(10));
 
 
 //Task 5b - Feet to CM
@@ -266,7 +262,7 @@ const num = 6;
 function annoyingSong(num){
     return `${num} bottles of soda on the wall, ${num} bottles of soda, take one down pass it around ` + (num -1) + ` bottles of soda on the wall`;
 }
-for (i = num; i < 1; i--){
+for (let i = num; i < 1; i--){
   annoyingSong(i);
 }
 console.log(annoyingSong());
