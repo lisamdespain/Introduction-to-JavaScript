@@ -190,31 +190,31 @@ Use the game function below to do the following:
 
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 */
-let computersChoice = Math.floor(Math.random() * 3);
+let computer = Math.floor(Math.random() * 3);
 
-  if (computersChoice === 0) {
-    computersChoice = 'rock';
-} else if (computersChoice === 1){
-  computersChoice = 'paper';
- } else if (computersChoice === 2){
-  computersChoice = 'scissors';
+  if (computer === 0) {
+    computer = 'rock';
+} else if (computer === 1){
+  computer = 'paper';
+ } else if (computer === 2){
+  computer = 'scissors';
   }
 
-  function game(usersChoice) {
-    if (usersChoice === computersChoice){
+  function game(user, computer) {
+    if (user === computer){
        return `it's a tie`;
-    } else if (usersChoice === 'scissors' && computersChoice === 'paper'){
+    } else if (user === 'scissors' && computer === 'paper'){
       return `you win!`;
-    } else if (usersChoice === 'paper' && computersChoice === 'rock'){
+    } else if (user === 'paper' && computer === 'rock'){
      return `you win!`;
-   } else if (usersChoice === 'rock' && computersChoice === 'scissors') {
+   } else if (user === 'rock' && computer === 'scissors') {
       return `you win!`;
    } else {
        return `you lose!`;;
    }
   }
- console.log(computersChoice);
- console.log(game('rock'));
+ console.log(computer);
+ console.log(game('rock', computer));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
