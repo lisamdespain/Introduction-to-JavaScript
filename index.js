@@ -200,17 +200,21 @@ let computersChoice = Math.floor(Math.random() * 3);
   computersChoice = 'scissors';
   }
 
-function game(usersChoice) {
-   if (usersChoice === computersChoice){
-      return 'it\'s a tie';
-   } else if ((usersChoice === 'scissors' && computersChoice === 'paper') || (usersChoice === 'paper' && computersChoice === 'rock') || (usersChoice === 'rock' && computersChoice === 'scissors')) {
-     return 'you win!';
-  } else {
-      return 'you lose!';
+  function game(usersChoice) {
+    if (usersChoice === computersChoice){
+       return `it's a tie`;
+    } else if (usersChoice === 'scissors' && computersChoice === 'paper'){
+      return `you win!`;
+    } else if (usersChoice === 'paper' && computersChoice === 'rock'){
+     return `you win!`;
+   } else if (usersChoice === 'rock' && computersChoice === 'scissors') {
+      return `you win!`;
+   } else {
+       return `you lose!`;;
+   }
   }
- }
-console.log(computersChoice);
-console.log(game('rock'));
+ console.log(computersChoice);
+ console.log(game('rock'));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -258,14 +262,14 @@ Using the annoyingSong function below do the following:
 4. Each time the annoyingSong is run from this loop, it should console.log the string that was returned. 
 */
 
-const num = 6;
+
 function annoyingSong(num){
-    return `${num} bottles of soda on the wall, ${num} bottles of soda, take one down pass it around ` + (num -1) + ` bottles of soda on the wall`;
+  for (let i = num; i > 0; i--){
+        return `${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ` + (i - 1) + ` bottles of soda on the wall`;
 }
-for (let i = num; i < 1; i--){
-  annoyingSong(i);
 }
-console.log(annoyingSong());
+
+console.log(annoyingSong(6));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
